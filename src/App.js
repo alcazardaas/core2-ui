@@ -1,7 +1,7 @@
 import 'babel-polyfill'
 
 import React from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 /* SCSS */
 import './assets/css/main.css'
@@ -23,8 +23,6 @@ class App extends React.Component {
           <Route exact path='/home' component={Home} />
           <Route exact path='/counter' component={Count} />
         </Switch>
-        <Link to={'/home'}> Home </Link>
-        <Link to={'/counter'}> Counter </Link>
       </main>
     );
   }
