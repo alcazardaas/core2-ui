@@ -1,25 +1,14 @@
-import 'babel-polyfill'
-
-import React from 'react'
-import { Switch, Route } from 'react-router-dom'
-
+import React, { Component } from 'react'
 import Count from './components/Count'
 
-class App extends React.Component {
+
+class App extends Component {
   render() {
     return (
       <div>
-        <header>
-
-        </header>
-        <main>
-          <Count />
-        </main>
-        <footer>
-
-        </footer>
+        <Count />
       </div>
-    )
+    );
   }
 }
 
