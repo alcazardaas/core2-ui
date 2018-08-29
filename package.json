@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "star": "react-scripts start",
     "build": "webpack --mode production",
     "start-client": "webpack-dev-server --open --mode development",
     "start-server": "json-server ./db/jobs.json --delay 50",
@@ -23,6 +24,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
+    "react-scripts": "^1.1.5",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-form": "^7.4.2",
