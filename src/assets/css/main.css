@@ -1,2 +1,60 @@
 @import url('./../vendors/css/normalize.css');
 @import url('./../vendors/css/skeleton.css');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/************************************************************************/
+
+/**********************************MAIN**********************************/
+
+/************************************************************************/
+
+/********************/
+
+/*        MENU      */
+
+/********************/
+
+.sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background: #151719;
+  left: -200px;
+  transition: all 500ms linear;
+}
+
+.sidebar.active {
+  left: 0px;
+}
+
+.menu-list-item {
+  list-style: none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3)
+}
+
+.menu-list-item a {
+  color: rgba(230, 230, 230, 0.9);
+  text-decoration: none;
+}
+
+.menu-list-item a:hover {
+  text-decoration: underline;
+}
+
+.sidebar .toggle-btn {
+  position: absolute;
+  left: 230px;
+  top: 20px;
+}
+
+.menu-toggle {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: #151719;
+  margin: 3px 0px;
+}
