@@ -1,23 +1,19 @@
 {
-  "name": "core2-ui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "rextredux",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "star": "react-scripts start",
-    "build": "webpack --mode production",
-    "start-client": "webpack-dev-server --open --mode development",
-    "start-server": "json-server ./db/jobs.json --delay 50",
-    "start": "concurrently 'npm:start-client' 'npm:start-server'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
-  "keywords": [],
-  "author": "Mauricio Poveda",
-  "license": "MIT",
   "dependencies": {
-    "@rematch/core": "^1.0.0-beta.4",
+    "@rematch/core": "next",
+    "flexboxgrid": "^6.3.1",
     "history": "^4.7.2",
     "normalize.css": "^8.0.0",
+    "normalizr": "^3.2.4",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

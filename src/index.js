@@ -1,20 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { init } from "@rematch/core";
 import { Provider } from "react-redux";
-import * as models from './models/models';
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import App from './App'
+import App from './App';
+import store from './redux/store';
 
-// generate Redux store
-const store = init({
-  models,
-});
-
-const Root = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
-
-ReactDOM.render(<Root />, document.querySelector('#root'));
+ReactDOM.render(
+  <Provider store={store} >
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById('root')
+)
