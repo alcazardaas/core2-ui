@@ -1,8 +1,20 @@
 @import url('./../vendors/css/normalize.css');
 @import url('./../vendors/css/skeleton.css');
+
+/********************/
+
+/*       CENTER     */
+
+/********************/
+
 * {
   margin: 0;
   padding: 0;
+}
+
+.justify-content-center {
+  display: flex;
+  justify-content: center;
 }
 
 /************************************************************************/
@@ -118,7 +130,5 @@ input.login-input:focus {
 /********************/
 
 .main-top-container {
-  display: flex;
-  justify-content: center;
   padding-top: 1rem;
 }
