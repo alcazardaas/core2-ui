@@ -7,6 +7,57 @@
 
 /************************************************************************/
 
+/**********************************LOGIN**********************************/
+
+/************************************************************************/
+
+/********************/
+
+/*     CONTAINER    */
+
+/********************/
+
+.login-main-cont {
+  background-image: url('./../../background_login/1.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.login-logo {
+  width: 100%;
+  border-radius: 80px;
+}
+
+.login-cont {
+  padding: 10%;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 21% 0;
+  border-radius: 100px;
+}
+
+input.login-input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #0092FF;
+  width: 100%;
+  background: none;
+}
+
+input.login-input:focus {
+  border-width: 0 0 2px;
+  border-color: #005a9e;
+}
+
+.btn-login {
+  color: #fff;
+  background: rgb(0, 125, 221);
+  border-radius: 20px;
+  width: 100%;
+}
+
+/************************************************************************/
+
 /**********************************MAIN**********************************/
 
 /************************************************************************/
@@ -47,7 +98,7 @@
 
 .sidebar .toggle-btn {
   position: absolute;
-  left: 230px;
+  left: 220px;
   top: 20px;
 }
 
@@ -57,4 +108,17 @@
   height: 5px;
   background: #151719;
   margin: 3px 0px;
+  border-radius: 5px;
+}
+
+/********************/
+
+/*        TOP      */
+
+/********************/
+
+.main-top-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
 }

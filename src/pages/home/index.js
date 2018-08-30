@@ -1,14 +1,13 @@
 import React from 'react'
 import Menu from './../../components/main_components/menu/'
 
+import MainContainer from './../../containers/mainContainer/'
+
 const Home = (props) => {
   return (
     <div>
       <Menu />
-      <div>
-        <h4>Buenas User</h4>
-        <h4>Salir</h4>
-      </div>
+      <MainContainer />
     </div>
   )
 }
