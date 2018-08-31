@@ -6,15 +6,11 @@ import Account from './account/'
 const MyAccounts = (props) => {
   return (
     <div className='container'>
-      <div className="justify-content-center">
-        <div className="row">
-          <div>
-            <h3>My Accounts</h3>
-          </div>
-          <Account />
-          <ExchangeRate />
-        </div>
+      <div className='justify-content-center'>
+        <h3>My Accounts</h3>
       </div>
+      <Account />
+      <ExchangeRate />
     </div>
   )
 }

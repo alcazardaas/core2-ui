@@ -6,7 +6,7 @@ var JSONMenu = {
     { 'text': 'Home', 'to': 'home', 'icon': 'none' },
     { 'text': 'My Accounts', 'to': 'home', 'icon': 'none' },
     { 'text': 'Payments', 'to': 'home', 'icon': 'none' },
-    { 'text': 'Transfers', 'to': 'home', 'icon': 'none' },
+    { 'text': 'Transfers', 'to': 'transfers', 'icon': 'none' },
     { 'text': 'Counter', 'to': 'counter', 'icon': 'none' },
     { 'text': 'Contact', 'to': 'home', 'icon': 'none' },
   ]

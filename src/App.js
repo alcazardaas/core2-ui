@@ -10,9 +10,9 @@ import './assets/css/main.css'
 import Count from './components/Count'
 
 /* PAGES */
-import Home from './pages/home/'
 import Login from './pages/login/'
-
+import Home from './pages/home/'
+import Transfers from './containers/transfersContainer/'
 
 class App extends React.Component {
   render() {
@@ -22,6 +22,7 @@ class App extends React.Component {
           <Route exact path='/' component={Login} />
           <Route exact path='/home' component={Home} />
           <Route exact path='/counter' component={Count} />
+          <Route exact path='/transfers' component={Transfers} />
         </Switch>
       </main>
     );
