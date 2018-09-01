@@ -2,7 +2,7 @@
 @import url('./../vendors/css/skeleton.css');
 /********************/
 
-/*       CENTER     */
+/*      GENERAL     */
 
 /********************/
 
@@ -14,6 +14,20 @@
 .justify-content-center {
   display: flex;
   justify-content: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
 }
 
 /************************************************************************/
@@ -150,53 +164,75 @@ input.login-input:focus {
 
 /********************/
 
+/*    MY TRANSFERS  */
+
+/********************/
+
+.input-date {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #0092FF;
+  width: 100%;
+  height: 3rem;
+  border-radius: 5px;
+}
+
+.mytransfers-tablecontainer {
+  padding-top: 5%;
+}
+
+/********************/
+
 /*      TABS    */
 
 /********************/
 
-.tabs {}
+.tabs {
+  margin-top: 15%;
+}
 
 .tabs input[type=radio] {
   display: none;
 }
 
-.tabs label {
+.tabs .transfer-main-label {
   transition: background 0.4s ease-in-out, height 0.2s linear;
   display: inline-block;
   cursor: pointer;
-  color: #2EBEB9;
+  color: #26597F;
   width: 20%;
   height: 3em;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  background: #FCFCFC;
+  background: #F5F5F5;
   text-align: center;
   line-height: 3em;
+  margin: 0;
 }
 
-.tabs label:last-of-type {
+.tabs .transfer-main-label:last-of-type {
   border-bottom: none;
 }
 
-.tabs label:hover {
-  background: #259692;
+.tabs .transfer-main-label:hover {
+  background: #0075CC;
   color: #ffffff;
 }
 
 @media screen and (max-width: 1600px) {
-  .tabs label {
+  .tabs .transfer-main-label {
     width: 15%;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .tabs label {
+  .tabs .transfer-main-label {
     width: 20%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .tabs label {
+  .tabs .transfer-main-label {
     width: 100%;
     display: block;
     border-bottom: 2px solid #C7C6C4;
@@ -210,8 +246,8 @@ input.login-input:focus {
   }
 }
 
-#tab1:checked+label, #tab2:checked+label, #tab3:checked+label, #tab4:checked+label {
-  background: #2EBEB9;
+#tab1:checked+.transfer-main-label, #tab2:checked+.transfer-main-label, #tab3:checked+.transfer-main-label, #tab4:checked+.transfer-main-label {
+  background: #00497F;
   color: #FFFFFF;
 }
 
@@ -222,8 +258,8 @@ input.login-input:focus {
 }
 
 .tab-content-wrapper {
-  background: #FCFCFC;
-  border-top: #2EBEB9 5px solid;
+  background: #F5F5F5;
+  border-top: #00497F 5px solid;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   border-top-right-radius: 3px;
