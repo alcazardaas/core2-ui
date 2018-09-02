@@ -22,11 +22,11 @@ let items = JSONMenu.accItems.map(item => {
   )
 })
 
-const MyTransfers = (props) => {
+const MyPayments = (props) => {
   return (
     <div className='container'>
       <div className='justify-content-center'>
-        <h3> My Transfers</h3>
+        <h3> My Payments</h3>
       </div>
 
       <div className="row">
@@ -60,4 +60,4 @@ const MyTransfers = (props) => {
   )
 }
 
-export default MyTransfers
+export default MyPayments

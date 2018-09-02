@@ -4,7 +4,7 @@ const Transfers = (props) => {
   return (
     <div className='container transfers-cont'>
       <div className='justify-content-center'>
-        <h3>Transfers</h3>
+        <h3>Payments</h3>
       </div>
       <label htmlFor="originAccount">Origin Account</label>
       <select className='u-full-width' name="originAccount" id="originAccount">
@@ -14,8 +14,13 @@ const Transfers = (props) => {
         <option value="mango">Mango</option>
       </select>
 
-      <label htmlFor="targetAccount">Target Account</label>
-      <input className='u-full-width' type="number" name="targetAccount" id="targetAccount" />
+      <label htmlFor="bill">Bill</label>
+      <select className='u-full-width' name="bill" id="bill">
+        <option value="grapefruit">bill</option>
+        <option value="lime">bill l</option>
+        <option value="coconut">bill ll</option>
+        <option value="mango">bill lll</option>
+      </select>
 
       <label htmlFor="amount">Amount</label>
       <input className='u-full-width' type="number" name="amount" id="amount" />
