@@ -1,29 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-var JSONMenu = {
-  'accItems': [
-    { 'AccountNumber': '123123', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
-    { 'AccountNumber': '321123', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
-    { 'AccountNumber': '321321', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
-    { 'AccountNumber': '234432', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
-    { 'AccountNumber': '234234', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
-    { 'AccountNumber': '421231', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
-  ]
-};
+const Account = ({ accounts }) => {
 
-let items = JSONMenu.accItems.map(item => {
-  return (
-    <tr key={item.AccountNumber}>
-      <td><Link to={'/'}>{item.AccountNumber}</Link></td>
-      <td>{item.Currency}</td>
-      <td>{item.Balance}</td>
-      <td>{item.AccountType}</td>
-    </tr>
-  )
-})
+  let items2 = accounts.map(item => {
+    return (
+      <tr key={item.id}>
+        <td><Link to={'/'}>{item.accountNumber}</Link></td>
+        <td>{item.currency}</td>
+        <td>{item.balance}</td>
+        <td>{item.accountType}</td>
+      </tr>
+    )
+  })
 
-const Account = (props) => {
   return (
     <div>
       <input className='login-input' type='text' id='searchBar' placeholder='SEARCH' />
@@ -37,7 +27,7 @@ const Account = (props) => {
           </tr>
         </thead>
         <tbody>
-          {items}
+          {items2}
         </tbody>
       </table>
     </div>

@@ -4,3 +4,5 @@ const history = createHistory({
   basename: '',
   forceRefresh: false
 })
+
+export default history
