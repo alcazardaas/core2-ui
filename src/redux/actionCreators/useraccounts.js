@@ -1,8 +1,10 @@
 import * as a from '../actions/types'
 
-const API_URL = 'https://localhost:44353/api/bankaccounts'
+const API_URL_USER = 'https://localhost:44353/api/bankaccounts/getuseraccounts'
 
-export default function getAllBankaccounts() {
+export default function getUserAccounts(userAccount) {
+  console.log(userAccount)
+  
   return async dispatch => {
     // Initiate loading state
     dispatch({
@@ -11,11 +13,18 @@ export default function getAllBankaccounts() {
 
     try {
       // Call the API
-      const response = await fetch(API_URL)
+      const response = await fetch(API_URL_USER, {
+        method: 'POST',
+        body: JSON.stringify(userAccount),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
       const result = await response.json()
+
       // Update payload in reducer on success
       dispatch({
-        type: a.ACCOUNTS_GETALL_SUCCESS,
+        type: a.ACCOUNTS_GETUSERACCOUNTS,
         payload: result
       })
     } catch (err) {

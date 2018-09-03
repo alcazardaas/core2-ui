@@ -25,7 +25,7 @@ const Transfers = (props) => {
       <label htmlFor="amount">Amount</label>
       <input className='u-full-width' type="number" name="amount" id="amount" />
 
-      <button className='btn-login' type='submit'>TRANSFER</button>
+      <button className='btn-login' type='submit'>PAY</button>
 
     </div>
   )

@@ -1,33 +1,33 @@
 import * as a from '../actions/types'
 
 const INITIAL_STATE = {
-  accounts: [],
+  payments: [],
   isLoading: false,
   error: ''
 }
 
-export default function accountsReducer(state = INITIAL_STATE, action) {
+export default function paymentsReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case a.ACCOUNTS_GETALL_REQUEST:
+    case a.PAYMENTS_GETALL_REQUEST:
       return {
         ...state
       }
-    case a.ACCOUNTS_GETALL_SUCCESS:
+    case a.PAYMENTS_GETALL_SUCCESS:
       return {
         ...state,
-        accounts: action.payload,
+        payments: action.payload,
         isLoaded: true
       }
-    case a.ACCOUNTS_GETALL_FAILURE:
+    case a.PAYMENTS_GETALL_FAILURE:
       return {
         ...state,
         error: action.error,
         isLoaded: false
       }
-    case a.ACCOUNTS_GETUSERACCOUNTS:
+    case a.PAYMENTS_GETUSERPAYMENTS:
       return {
         ...state,
-        accounts: action.payload,
+        payments: action.payload,
         isLoaded: true
       }
     default:

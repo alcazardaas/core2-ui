@@ -1,23 +1,25 @@
 import React from 'react'
 
-var JSONMenu = {
+var JSONPayments = {
   'accItems': [
-    { 'AccountNumber': '123123', 'Currency': 'Colones', 'Balance': 500000, 'AccountType': 'Saving' },
-    { 'AccountNumber': '321123', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
-    { 'AccountNumber': '321321', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
-    { 'AccountNumber': '234432', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
-    { 'AccountNumber': '234234', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
-    { 'AccountNumber': '421231', 'Currency': 'colones', 'Balance': 500000, 'AccountType': 'Saving' },
+    { 'id': 1, 'clientId': '2', 'providerId': '1', 'Currency': 'Colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
+    { 'id': 2, 'clientId': '2', 'providerId': '2', 'Currency': 'colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
+    { 'id': 3, 'clientId': '2', 'providerId': '3', 'Currency': 'colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
+    { 'id': 4, 'clientId': '2', 'providerId': '4', 'Currency': 'colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
+    { 'id': 5, 'clientId': '2', 'providerId': '5', 'Currency': 'colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
+    { 'id': 6, 'clientId': '2', 'providerId': '6', 'Currency': 'colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
   ]
 };
 
-let items = JSONMenu.accItems.map(item => {
+let items = JSONPayments.accItems.map(item => {
   return (
-    <tr key={item.AccountNumber}>
-      <td>{item.AccountNumber}</td>
+    <tr key={item.id}>
+      <td>{item.clientId}</td>
+      <td>{item.providerId}</td>
       <td>{item.Currency}</td>
-      <td>{item.Balance}</td>
-      <td>{item.AccountType}</td>
+      <td>{item.amount}</td>
+      <td>{item.dueDate}</td>
+      <td>{item.isPaid ? "Paid" : "Not paid"}</td>
     </tr>
   )
 })
@@ -45,10 +47,12 @@ const MyPayments = (props) => {
         <table className='u-full-width'>
           <thead>
             <tr>
-              <th>Account</th>
+              <th>Client</th>
+              <th>Provider</th>
               <th>Currency</th>
-              <th>Balance</th>
-              <th>Type</th>
+              <th>Amount</th>
+              <th>DueDate</th>
+              <th>IsPaid</th>
             </tr>
           </thead>
           <tbody>
