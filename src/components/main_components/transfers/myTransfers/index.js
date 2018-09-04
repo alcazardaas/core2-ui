@@ -22,7 +22,19 @@ let items = JSONMenu.accItems.map(item => {
   )
 })
 
-const MyTransfers = (props) => {
+const MyTransfers = ({transfers}) => {
+
+  let items2 = transfers.map(item => {
+    return (
+      <tr key={item.id}>
+        <td>{item.discAccount}</td>
+        <td>{item.destBankAccount}</td>
+        <td>{item.amount}</td>
+        <td>{item.transactionDate}</td>
+      </tr>
+    )
+  })
+
   return (
     <div className='container'>
       <div className='justify-content-center'>
@@ -52,7 +64,7 @@ const MyTransfers = (props) => {
             </tr>
           </thead>
           <tbody>
-            {items}
+            {items2}
           </tbody>
         </table>
       </div>

@@ -24,6 +24,7 @@ class PaymentContainer extends React.Component {
   render() {
 
     var { isLoading, payments, error } = this.props
+
     return (
       !isLoading ?
         <div className="container">
