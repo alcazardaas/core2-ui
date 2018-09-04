@@ -8,35 +8,48 @@ import getUserPayments from './../../redux/actionCreators/userpayments'
 
 class PaymentContainer extends React.Component {
 
+  async componentDidMount() {
+    let user = {
+      "SocialNumber": "114000071",
+      "Password": "12345678",
+      "IsAdmin": false
+    }
+
+    this.props.getUserPayments(user)
+  }
+
   setGender(event) {
   }
 
   render() {
-    return (
-      <div className="container">
-        <div className="tabs" onChange={this.setGender.bind(this)}>
-          <input type="radio" name="tab" id="tab1" defaultChecked />
-          <label className='transfer-main-label' htmlFor="tab1">Payments</label>
-          <input type="radio" name="tab" id="tab2" />
-          <label className='transfer-main-label' htmlFor="tab2">My Payments</label>
 
-          <div className="tab-content-wrapper">
-            <div id="tab-content-1" className="tab-content">
-              <Payments />
-            </div>
-            <div id="tab-content-2" className="tab-content">
-              <MyPayments />
+    var { isLoading, payments, error } = this.props
+    return (
+      !isLoading ?
+        <div className="container">
+          <div className="tabs" onChange={this.setGender.bind(this)}>
+            <input type="radio" name="tab" id="tab1" defaultChecked />
+            <label className='transfer-main-label' htmlFor="tab1">Payments</label>
+            <input type="radio" name="tab" id="tab2" />
+            <label className='transfer-main-label' htmlFor="tab2">My Payments</label>
+
+            <div className="tab-content-wrapper">
+              <div id="tab-content-1" className="tab-content">
+                <Payments />
+              </div>
+              <div id="tab-content-2" className="tab-content">
+                <MyPayments payments={payments} />
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> : <div><h1>LOADING...</h1></div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  payments: state.payments.accounts,
-  isLoaded: state.payments.isLoaded,
+  payments: state.payments.payments,
+  isLoading: state.payments.isLoading,
   error: state.payments.error
 })
 

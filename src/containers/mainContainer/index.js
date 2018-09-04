@@ -22,10 +22,10 @@ async componentDidMount() {
 
 render() {
 
-  var { isLoaded, accounts, error } = this.props
+  var { isLoading, accounts, error } = this.props
 
   return (
-    isLoaded ?
+    !isLoading ?
       <div>
         <TopCont />
         <MyAccounts accounts={accounts} />
@@ -37,7 +37,7 @@ render() {
 
 const mapStateToProps = state => ({
   accounts: state.accounts.accounts,
-  isLoaded: state.accounts.isLoaded,
+  isLoading: state.accounts.isLoading,
   error: state.accounts.error
 })
 

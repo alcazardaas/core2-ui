@@ -14,7 +14,6 @@ var JSONPayments = {
 let items = JSONPayments.accItems.map(item => {
   return (
     <tr key={item.id}>
-      <td>{item.clientId}</td>
       <td>{item.providerId}</td>
       <td>{item.Currency}</td>
       <td>{item.amount}</td>
@@ -24,7 +23,20 @@ let items = JSONPayments.accItems.map(item => {
   )
 })
 
-const MyPayments = (props) => {
+const MyPayments = ({ payments }) => {
+
+  let items2 = payments.map(item => {
+    return (
+      <tr key={item.id}>
+        <td>{item.providerId}</td>
+        <td>{item.currency}</td>
+        <td>{item.amount}</td>
+        <td>{item.dueDate}</td>
+        <td>{item.isPaid ? "Paid" : "Not paid"}</td>
+      </tr>
+    )
+  })
+
   return (
     <div className='container'>
       <div className='justify-content-center'>
@@ -47,7 +59,6 @@ const MyPayments = (props) => {
         <table className='u-full-width'>
           <thead>
             <tr>
-              <th>Client</th>
               <th>Provider</th>
               <th>Currency</th>
               <th>Amount</th>
@@ -56,7 +67,7 @@ const MyPayments = (props) => {
             </tr>
           </thead>
           <tbody>
-            {items}
+            {items2}
           </tbody>
         </table>
       </div>

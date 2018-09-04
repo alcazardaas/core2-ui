@@ -2,7 +2,7 @@ import * as a from '../actions/types'
 
 const INITIAL_STATE = {
   accounts: [],
-  isLoading: false,
+  isLoading: true,
   error: ''
 }
 
@@ -16,19 +16,19 @@ export default function accountsReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         accounts: action.payload,
-        isLoaded: true
+        isLoading: false
       }
     case a.ACCOUNTS_GETALL_FAILURE:
       return {
         ...state,
         error: action.error,
-        isLoaded: false
+        isLoading: true
       }
     case a.ACCOUNTS_GETUSERACCOUNTS:
       return {
         ...state,
         accounts: action.payload,
-        isLoaded: true
+        isLoading: false
       }
     default:
       return state

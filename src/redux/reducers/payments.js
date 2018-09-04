@@ -2,7 +2,7 @@ import * as a from '../actions/types'
 
 const INITIAL_STATE = {
   payments: [],
-  isLoading: false,
+  isLoading: true,
   error: ''
 }
 
@@ -16,19 +16,19 @@ export default function paymentsReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         payments: action.payload,
-        isLoaded: true
+        isLoading: false
       }
     case a.PAYMENTS_GETALL_FAILURE:
       return {
         ...state,
         error: action.error,
-        isLoaded: false
+        isLoading: true
       }
     case a.PAYMENTS_GETUSERPAYMENTS:
       return {
         ...state,
         payments: action.payload,
-        isLoaded: true
+        isLoading: false
       }
     default:
       return state
