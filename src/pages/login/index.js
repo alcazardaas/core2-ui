@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom'
 import { reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
+import history from './../../helpers/history'
 import LogComp from './../../components/login_components/login/'
 import login from './../../redux/actionCreators/login'
 
 class Login extends React.Component {
   submit = values => {
-    window.alert(JSON.stringify(values));
+    var { logged } = this.props
+
     this.props.login(values)
+    if (logged) {
+      history.push('/home')
+    }
   };
 
   render() {
@@ -18,8 +23,6 @@ class Login extends React.Component {
         <div className='container'>
           <div className="row">
             <LogComp onSubmit={this.submit} />
-            <Link to={'/home'}> Ignore </Link>
-            <Link to={'/counter'}> Me </Link>
           </div>
         </div>
       </div>
@@ -29,7 +32,7 @@ class Login extends React.Component {
 
 
 const mapStateToProps = state => ({
-
+  logged: state.login.logged,
 })
 
 const mapDispatchToProps = {

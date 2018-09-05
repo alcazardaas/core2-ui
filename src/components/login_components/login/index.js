@@ -2,7 +2,7 @@ import React from 'react'
 import logo from './../../../assets/img/2.png'
 
 import { Field, reduxForm } from 'redux-form'
-
+import LoginModal from './../modal'
 
 const Login_Component = (props) => {
 
@@ -32,6 +32,7 @@ const Login_Component = (props) => {
             <button className='btn-login' type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
           </div>
         </form>
+        <LoginModal />
       </div>
     </div>
   )

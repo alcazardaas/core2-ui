@@ -21,11 +21,9 @@ export default function login(userAccount) {
         }
       })
       const result = await response.json()
+      sessionStorage.setItem('uClient', userAccount.socialNumber)
       sessionStorage.setItem('uToken', result.token);
       sessionStorage.setItem('uRole', result.isAdmin);
-      
-      alert('action creator reslt  ' +sessionStorage.getItem('uToken'))
-      alert('action creator reslt  ' + sessionStorage.getItem('uRole'))
 
       // Update payload in reducer on success
       dispatch({

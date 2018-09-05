@@ -10,8 +10,8 @@ class TransferContainer extends React.Component {
 
   async componentDidMount() {
     let user = {
-      "SocialNumber": "114000071",
-      "Password": "12345678"
+      "SocialNumber": sessionStorage.getItem('uClient'),
+      "Password": "myPassword"
     }
 
     this.props.getUserTransfers(user)

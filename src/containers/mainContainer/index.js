@@ -12,9 +12,8 @@ class MainComponent extends React.Component {
 
 async componentDidMount() {
   let user = {
-    "SocialNumber": "114000071",
-    "Password": "12345678",
-    "IsAdmin": false
+    "SocialNumber": sessionStorage.getItem('uClient'),
+    "Password": "myPassword"
   }
 
   this.props.getUserAccounts(user)

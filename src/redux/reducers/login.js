@@ -2,7 +2,7 @@ import * as a from '../actions/types'
 
 const INITIAL_STATE = {
   login: {},
-  isLoading: true,
+  logged: false,
   error: ''
 }
 
@@ -16,13 +16,12 @@ export default function loginReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         login: action.payload,
-        isLoading: false
+        logged: true
       }
     case a.LOGIN_FAILURE:
       return {
         ...state,
         error: action.error,
-        isLoading: true
       }
     default:
       return state
