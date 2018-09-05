@@ -11,8 +11,7 @@ class TransferContainer extends React.Component {
   async componentDidMount() {
     let user = {
       "SocialNumber": "114000071",
-      "Password": "12345678",
-      "IsAdmin": false
+      "Password": "12345678"
     }
 
     this.props.getUserTransfers(user)

@@ -3,6 +3,7 @@ import logo from './../../../assets/img/2.png'
 
 import { Field, reduxForm } from 'redux-form'
 
+
 const Login_Component = (props) => {
 
   const { handleSubmit, pristine, reset, submitting } = props
@@ -15,15 +16,15 @@ const Login_Component = (props) => {
         </div>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="userId">User</label>
+            <label htmlFor="socialNumber">User</label>
             <div>
-              <Field className='login-input' name='userId' component='input' type='text' placeholder='USER' />
+              <Field className='login-input' name='socialNumber' component='input' type='text' placeholder='USER' />
             </div>
           </div>
           <div>
-            <label htmlFor="passw">Password</label>
+            <label htmlFor="password">Password</label>
             <div>
-              <Field className='login-input' name='passw' component='input' type='password' placeholder='USER' />
+              <Field className='login-input' name='password' component='input' type='password' placeholder='USER' />
             </div>
           </div>
           <div>
