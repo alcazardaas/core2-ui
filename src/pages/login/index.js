@@ -3,18 +3,24 @@ import { Link } from 'react-router-dom'
 
 import LogComp from './../../components/login_components/login/'
 
-const Login = (props) => {
-  return (
-    <div className="login-main-cont">
-      <div className='container'>
-        <div className="row">
-          <LogComp />
-          <Link to={'/home'}> Ignore </Link>
-          <Link to={'/counter'}> Me </Link>
+class Login extends React.Component {
+  submit = values => {
+    window.alert(JSON.stringify(values));
+  };
+  
+  render() {
+    return (
+      <div className="login-main-cont">
+        <div className='container'>
+          <div className="row">
+            <LogComp onSubmit={this.submit} />
+            <Link to={'/home'}> Ignore </Link>
+            <Link to={'/counter'}> Me </Link>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Login
