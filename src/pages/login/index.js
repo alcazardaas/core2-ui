@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
