@@ -46,10 +46,10 @@ class Transfers extends React.Component {
 
           <label htmlFor='Amount'>Amount</label>
           <Field className='u-full-width' type='number' name='Amount' component='input' />
-          
+
 
           <div>
-            <button className='btn-login' type='submit' disabled={pristine || submitting}>Pay</button>
+            <button className='btn-login' type='submit' disabled={pristine || submitting}>Transfer</button>
           </div>
         </form>
       </div>

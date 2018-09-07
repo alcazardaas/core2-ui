@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   error: ''
 }
 
-export default function loginReducer(state = INITIAL_STATE, action) {
+export default function createUserAccountReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case a.CREATE_USER_ACCOUNT_REQUEST:
       return {

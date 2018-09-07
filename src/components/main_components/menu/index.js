@@ -1,18 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+let isAdmin = sessionStorage.getItem('uRole')
+
 var JSONMenu = {
   'menuItems': [
     { 'text': 'Home', 'to': 'home', 'icon': 'none' },
-    { 'text': 'My Accounts', 'to': 'home', 'icon': 'none' },
     { 'text': 'Payments', 'to': 'payments', 'icon': 'none' },
     { 'text': 'Transfers', 'to': 'transfers', 'icon': 'none' },
-    { 'text': 'Counter', 'to': 'counter', 'icon': 'none' },
     { 'text': 'Contact', 'to': 'home', 'icon': 'none' },
   ]
 };
 
-let items = JSONMenu.menuItems.map(item => {
+var JSONMenuAdmin = {
+  'menuItems': [
+    { 'text': 'Home', 'to': 'home', 'icon': 'none' },
+    { 'text': 'Clients', 'to': 'clients', 'icon': 'none' },
+    { 'text': 'Bank Accounts', 'to': 'bankaccounts', 'icon': 'none' },
+    { 'text': 'Providers', 'to': 'providers', 'icon': 'none' },
+    { 'text': 'Payments', 'to': 'adminpayments', 'icon': 'none' },
+  ]
+};
+
+var menu = isAdmin ? JSONMenuAdmin : JSONMenu;
+
+let items = menu.menuItems.map(item => {
   return (
     <li key={item.text} className='menu-list-item'>
       <Link to={`/` + item.to} > {item.text} </Link>

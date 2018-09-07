@@ -24,7 +24,6 @@ class PaymentContainer extends React.Component {
 
   submit = values => {
     values ={...values, clientId: sessionStorage.getItem('uClient')}
-    console.log(values)
     this.props.payPayment(values)
   }
 

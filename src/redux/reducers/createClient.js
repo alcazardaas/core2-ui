@@ -1,24 +1,23 @@
 import * as a from '../actions/types'
 
 const INITIAL_STATE = {
-  user: {},
   saved: false,
   error: ''
 }
 
-export default function transferReducer(state = INITIAL_STATE, action) {
+export default function createClientReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case a.TRANSFERS_REQUEST:
+    case a.CREATE_CLIENT_REQUEST:
       return {
         ...state
       }
-    case a.TRANSFERS_SUCCESS:
+    case a.CREATE_CLIENT_SUCCESS:
       return {
         ...state,
-        transfer: action.payload,
+        payment: action.payload,
         saved: true
       }
-    case a.TRANSFERS_FAILURE:
+    case a.CREATE_CLIENT_FAILURE:
       return {
         ...state,
         error: action.error,

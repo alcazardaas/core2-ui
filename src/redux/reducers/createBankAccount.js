@@ -1,24 +1,23 @@
 import * as a from '../actions/types'
 
 const INITIAL_STATE = {
-  user: {},
   saved: false,
   error: ''
 }
 
-export default function transferReducer(state = INITIAL_STATE, action) {
+export default function createBankAccountReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case a.TRANSFERS_REQUEST:
+    case a.CREATE_BANKACCOUNT_REQUEST:
       return {
         ...state
       }
-    case a.TRANSFERS_SUCCESS:
+    case a.CREATE_BANKACCOUNT_SUCCESS:
       return {
         ...state,
-        transfer: action.payload,
+        payment: action.payload,
         saved: true
       }
-    case a.TRANSFERS_FAILURE:
+    case a.CREATE_BANKACCOUNT_FAILURE:
       return {
         ...state,
         error: action.error,
