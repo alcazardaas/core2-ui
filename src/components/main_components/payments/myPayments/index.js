@@ -1,28 +1,5 @@
 import React from 'react'
 
-var JSONPayments = {
-  'accItems': [
-    { 'id': 1, 'clientId': '2', 'providerId': '1', 'Currency': 'Colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
-    { 'id': 2, 'clientId': '2', 'providerId': '2', 'Currency': 'colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
-    { 'id': 3, 'clientId': '2', 'providerId': '3', 'Currency': 'colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
-    { 'id': 4, 'clientId': '2', 'providerId': '4', 'Currency': 'colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
-    { 'id': 5, 'clientId': '2', 'providerId': '5', 'Currency': 'colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
-    { 'id': 6, 'clientId': '2', 'providerId': '6', 'Currency': 'colones', 'amount': 500000, 'dueDate': '2019-01-01', 'isPaid': false },
-  ]
-};
-
-let items = JSONPayments.accItems.map(item => {
-  return (
-    <tr key={item.id}>
-      <td>{item.providerId}</td>
-      <td>{item.Currency}</td>
-      <td>{item.amount}</td>
-      <td>{item.dueDate}</td>
-      <td>{item.isPaid ? "Paid" : "Not paid"}</td>
-    </tr>
-  )
-})
-
 const MyPayments = ({ payments }) => {
 
   let items2 = payments.map(item => {

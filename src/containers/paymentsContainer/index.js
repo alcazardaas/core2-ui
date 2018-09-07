@@ -26,11 +26,11 @@ class PaymentContainer extends React.Component {
     values ={...values, clientId: sessionStorage.getItem('uClient')}
     console.log(values)
     this.props.payPayment(values)
-};  
+  }
 
   render() {
 
-    var { isLoading, payments, error } = this.props
+    var { isLoading, payments } = this.props
 
     return (
       !isLoading ?

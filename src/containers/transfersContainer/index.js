@@ -1,10 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { reduxForm } from 'redux-form'
+
 
 import Transfers from '../../components/main_components/transfers/transfer/'
 import MyTransfers from '../../components/main_components/transfers/myTransfers/'
 
 import getUserTransfers from './../../redux/actionCreators/usertransfers'
+import createTransfer from './../../redux/actionCreators/transfers'
+
 
 class TransferContainer extends React.Component {
 
@@ -20,9 +24,25 @@ class TransferContainer extends React.Component {
   setGender(event) {
   }
 
+  submit = values => {
+    var d = new Date(),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    d = [year, month, day].join('-');
+
+    values = { ...values, TransactionDate: d }
+    console.log(values)
+    this.props.createTransfer(values)
+  }
+
   render() {
 
-    var { isLoading, transfers, error } = this.props
+    var { isLoading, transfers } = this.props
 
     return (
       !isLoading ?
@@ -35,7 +55,7 @@ class TransferContainer extends React.Component {
 
             <div className="tab-content-wrapper">
               <div id="tab-content-1" className="tab-content">
-                <Transfers />
+                <Transfers onSubmit={this.submit} />
               </div>
               <div id="tab-content-2" className="tab-content">
                 <MyTransfers transfers={transfers} />
@@ -54,7 +74,12 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  getUserTransfers
+  getUserTransfers,
+  createTransfer
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TransferContainer)
+const reduxFormConf = {
+  form: 'createTransfer'
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(reduxFormConf)(TransferContainer))
