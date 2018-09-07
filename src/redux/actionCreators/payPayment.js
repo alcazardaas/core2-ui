@@ -1,35 +1,33 @@
 import * as a from '../actions/types'
 
-const API_URL_USER = 'https://localhost:44353/api/useraccounts'
+const API_URL_USER = 'https://localhost:44353/api/payments/paypayment'
 
-export default function createUserAccount(userAccount) {
-  console.log(userAccount)
-
+export default function payPayment(accountpaymeny) {
   return async dispatch => {
     // Initiate loading state
     dispatch({
-      type: a.CREATE_USER_ACCOUNT_REQUEST
+      type: a.PAY_PAYMENT_REQUEST
     })
+    console.log('asdfawfasdf')
+    console.log(accountpaymeny)
 
     try {
       // Call the API
       const response = await fetch(API_URL_USER, {
         method: 'POST',
-        body: JSON.stringify(userAccount),
+        body: JSON.stringify(accountpaymeny),
         headers: {
           'Content-Type': 'application/json'
         }
       })
-
-      // Update payload in reducer on success
       dispatch({
-        type: a.CREATE_USER_ACCOUNT_SUCCESS,
+        type: a.PAY_PAYMENT_SUCCESS,
         payload: response.status
       })
     } catch (err) {
       // Update error in reducer on failure
       dispatch({
-        type: a.CREATE_USER_ACCOUNT_FAILURE,
+        type: a.PAY_PAYMENT_FAILURE,
         error: err
       })
     }

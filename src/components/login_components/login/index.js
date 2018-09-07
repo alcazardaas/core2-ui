@@ -12,16 +12,21 @@ class Login_Component extends React.Component {
 
   submit = values => {
     var { saved } = this.props
-
-    this.props.createUserAccount(values)
-    if (saved) {
-      alert('user created')
+    if (values.password === values.vPassword) {
+      var user = { socialNumber: values.socialNumber, password: values.password }
+      this.props.createUserAccount(user)
+      if (saved) {
+        alert('user created')
+      }
+    } else {
+      alert('Passwords have to match')
     }
+
   };
 
   render() {
 
-    const { saved, handleSubmit, pristine, reset, submitting } = this.props
+    const { handleSubmit, pristine, reset, submitting } = this.props
 
     return (
       <div className='offset-by-six five columns login-main-cont'>
@@ -62,7 +67,7 @@ const mapDispatchToProps = {
 }
 
 
-export default  connect(mapStateToProps, mapDispatchToProps)(reduxForm({
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({
   form: 'login'
 })(Login_Component))
 

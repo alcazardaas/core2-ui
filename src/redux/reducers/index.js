@@ -7,6 +7,7 @@ import PaymentsReducer from './payments'
 import TransfersReducer from './transfers'
 import LoginReducer from './login'
 import CreateUserAccountReducer from './createUserAccount'
+import PayPaymentReducer from './payPayment'
 
 export default combineReducers({
   form: formReducer,
@@ -16,4 +17,5 @@ export default combineReducers({
   transfers: TransfersReducer,
   login: LoginReducer,
   createUserAccount: CreateUserAccountReducer,
+  payPayment: PayPaymentReducer,
 })

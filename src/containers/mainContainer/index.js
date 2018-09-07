@@ -2,7 +2,6 @@ import React from 'react'
 import 'babel-polyfill'
 import { connect } from 'react-redux'
 
-import getAllAccounts from './../../redux/actionCreators/accounts'
 import getUserAccounts from './../../redux/actionCreators/useraccounts'
 
 import TopCont from './../../components/main_components/top/'
@@ -41,7 +40,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  getAllAccounts,
   getUserAccounts
 }
 

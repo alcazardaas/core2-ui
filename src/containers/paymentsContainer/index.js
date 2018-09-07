@@ -1,10 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { reduxForm } from 'redux-form'
 
 import Payments from '../../components/main_components/payments/payments/'
 import MyPayments from '../../components/main_components/payments/myPayments/'
 
 import getUserPayments from './../../redux/actionCreators/userpayments'
+import payPayment from './../../redux/actionCreators/payPayment'
 
 class PaymentContainer extends React.Component {
 
@@ -19,6 +21,12 @@ class PaymentContainer extends React.Component {
 
   setGender(event) {
   }
+
+  submit = values => {
+    values ={...values, clientId: sessionStorage.getItem('uClient')}
+    console.log(values)
+    this.props.payPayment(values)
+};  
 
   render() {
 
@@ -35,7 +43,7 @@ class PaymentContainer extends React.Component {
 
             <div className="tab-content-wrapper">
               <div id="tab-content-1" className="tab-content">
-                <Payments />
+                <Payments onSubmit={this.submit} />
               </div>
               <div id="tab-content-2" className="tab-content">
                 <MyPayments payments={payments} />
@@ -54,7 +62,12 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  getUserPayments
+  getUserPayments,
+  payPayment
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PaymentContainer)
+const reduxFormConf = {
+  form: 'createPayment'
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(reduxFormConf)(PaymentContainer))
