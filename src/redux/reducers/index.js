@@ -8,12 +8,13 @@ import TransfersReducer from './transfers'
 import LoginReducer from './login'
 import CreateUserAccountReducer from './createUserAccount'
 import PayPaymentReducer from './payPayment'
-import CreatePaymentReducer from './transfer'
+import CreateTransferReducer from './transfer'
 import CreateBankAccountReducer from './createBankAccount'
 import ClientsReducer from './clients'
 import CreateClientReducer from './createClient'
 import ProvidersReducer from './providers'
 import CreateProviderReducer from './createProvider'
+import CreatePaymentReducer from './createPayment'
 
 
 export default combineReducers({
@@ -25,10 +26,11 @@ export default combineReducers({
   login: LoginReducer,
   createUserAccount: CreateUserAccountReducer,
   payPayment: PayPaymentReducer,
-  createTransfers: CreatePaymentReducer,
+  createTransfers: CreateTransferReducer,
   createBankAccount: CreateBankAccountReducer,
   clients: ClientsReducer,
   createClient: CreateClientReducer,
   providers: ProvidersReducer,
   createProvider: CreateProviderReducer,
+  createPayment: CreatePaymentReducer,
 })
