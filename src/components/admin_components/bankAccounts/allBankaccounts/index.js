@@ -4,14 +4,26 @@ const AllBankAccounts = ({ bankaccounts }) => {
 
   let items2 = bankaccounts.map(item => {
     return (
-      <tr key={item.id}>
-        <td>{item.clientId}</td>
-        <td>{item.accountNumber}</td>
-        <td>{item.accountClientNumber}</td>
-        <td>{item.balance}</td>
-        <td>{item.accountType}</td>
-        <td>{item.accountStatus ? "Active" : "Inactive"}</td>
-      </tr>
+      <div key={item.id} className='row u-full-width div-list list-item'>
+        <div className='offset-by-one columns five'>
+          Client: {item.clientId}
+        </div>
+        <div className='offset-by-one columns ten'>
+          Account Number: {item.accountNumber}
+        </div>
+        <div className='offset-by-one columns ten'>
+          Account Client Number: {item.accountClientNumber}
+        </div>
+        <div className='offset-by-one columns five'>
+          Balance: {item.balance}
+        </div>
+        <div className='offset-by-one columns five'>
+          Account type: {item.accountType}
+        </div>
+        <div className='offset-by-one columns five'>
+          Status: {item.accountStatus ? "Active" : "Inactive"}
+        </div>
+      </div>
     )
   })
 
@@ -24,21 +36,7 @@ const AllBankAccounts = ({ bankaccounts }) => {
       <input className='login-input' type='text' id='search-bar' placeholder='SEARCH' />
 
       <div className="mytransfers-tablecontainer">
-        <table className='u-full-width'>
-          <thead>
-            <tr>
-              <th>Client</th>
-              <th>Account Number</th>
-              <th>Client Account Number</th>
-              <th>Balance</th>
-              <th>Type</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items2}
-          </tbody>
-        </table>
+        {items2}
       </div>
     </div>
   )

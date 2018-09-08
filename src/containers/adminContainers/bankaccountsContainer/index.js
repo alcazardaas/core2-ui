@@ -43,7 +43,7 @@ class BankAccounts extends React.Component {
             <input type="radio" name="tab" id="tab1" defaultChecked />
             <label className='transfer-main-label' htmlFor="tab1">Bank Accounts</label>
             <input type="radio" name="tab" id="tab2" />
-            <label className='transfer-main-label' htmlFor="tab2">Create Bank Accounts</label>
+            <label className='transfer-main-label' htmlFor="tab2">Create Account</label>
 
             <div className="tab-content-wrapper">
               <div id="tab-content-1" className="tab-content">

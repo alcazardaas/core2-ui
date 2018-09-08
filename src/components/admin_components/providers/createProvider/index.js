@@ -11,7 +11,7 @@ class CreateProvider extends React.Component {
     return (
       <div className='container transfers-cont' >
         <div className='justify-content-center'>
-          <h3>Create Account</h3>
+          <h3>Create Provider</h3>
         </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor='Name'>Name</label>

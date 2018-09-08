@@ -17,6 +17,8 @@ class Payments extends React.Component {
   }
 
   submit = values => {
+    values = {...values, IsPaid: false}
+    console.log(values)
     this.props.createPayment(values)
   }
 
@@ -31,9 +33,9 @@ class Payments extends React.Component {
       !isLoading ? <div className="container">
         <div className="tabs" onChange={this.setGender.bind(this)}>
           <input type="radio" name="tab" id="tab1" defaultChecked />
-          <label className='transfer-main-label' htmlFor="tab1">Providers</label>
+          <label className='transfer-main-label' htmlFor="tab1">Payments</label>
           <input type="radio" name="tab" id="tab2" />
-          <label className='transfer-main-label' htmlFor="tab2">Create/Update Provider</label>
+          <label className='transfer-main-label' htmlFor="tab2">Create Payment</label>
 
           <div className="tab-content-wrapper">
             <div id="tab-content-1" className="tab-content">

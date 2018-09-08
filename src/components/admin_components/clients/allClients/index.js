@@ -4,43 +4,42 @@ const AllClients = ({ clients }) => {
 
   let items2 = clients.map(item => {
     return (
-      <tr key={item.id}>
-        <td>{item.firstName + ' ' + item.lastName}</td>
-        <td>{item.socialNumber}</td>
-        <td>{item.phoneNumber}</td>
-        <td>{item.email}</td>
-        <td>{item.city}</td>
-        <td>{item.state}</td>
-        <td>{item.zip}</td>
-      </tr>
+      <div key={item.id} className='row u-full-width div-list list-item'>
+        <div className='offset-by-one columns five'>
+          Name: {item.firstName + ' ' + item.lastName}
+        </div>
+        <div className='offset-by-one columns five'>
+          Zip code: {item.zip}
+        </div>
+        <div className='offset-by-one columns five'>
+          Social Number: {item.socialNumber}
+        </div>
+        <div className='offset-by-one columns five'>
+          Phone: {item.phoneNumber}
+        </div>
+        <div className='offset-by-one columns five'>
+          Email: {item.email}
+        </div>
+        <div className='offset-by-one columns five'>
+          City: {item.city}
+        </div>
+        <div className='offset-by-one columns five'>
+          State: {item.state}
+        </div>
+      </div>
     )
   })
 
   return (
     <div className='container'>
       <div className='justify-content-center'>
-        <h3>Bank  Accounts</h3>
+        <h3>Clients</h3>
       </div>
 
       <input className='login-input' type='text' id='search-bar' placeholder='SEARCH' />
 
       <div className="mytransfers-tablecontainer">
-        <table className='u-full-width'>
-          <thead>
-            <tr>
-              <th>Client</th>
-              <th>Social Number</th>
-              <th>Phone Number</th>
-              <th>Email</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Zip</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items2}
-          </tbody>
-        </table>
+        {items2}
       </div>
     </div>
   )

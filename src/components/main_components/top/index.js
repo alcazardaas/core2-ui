@@ -1,9 +1,9 @@
 import React from 'react'
 
-const TopComponent = (props) => {
+const TopComponent = ({username}) => {
   return (
     <div className='main-top-container justify-content-center'>
-      <h1>HI CLIENT</h1>
+      <h1>Hello {' ' + username}</h1>
     </div>
   )
 }

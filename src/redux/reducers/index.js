@@ -15,6 +15,7 @@ import CreateClientReducer from './createClient'
 import ProvidersReducer from './providers'
 import CreateProviderReducer from './createProvider'
 import CreatePaymentReducer from './createPayment'
+import ClientBySocialNumberReducer from './clientbysocialnumber'
 
 
 export default combineReducers({
@@ -33,4 +34,5 @@ export default combineReducers({
   providers: ProvidersReducer,
   createProvider: CreateProviderReducer,
   createPayment: CreatePaymentReducer,
+  clientSocialNumber: ClientBySocialNumberReducer,
 })

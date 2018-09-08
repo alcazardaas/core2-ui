@@ -4,10 +4,15 @@ const AllProviders = ({ providers }) => {
 
   let items2 = providers.map(item => {
     return (
-      <tr key={item.id}>
-        <td>{item.name}</td>
-        <td>{item.legalNumber}</td>
-      </tr>
+      <div key={item.id} className='row u-full-width div-list list-item'>
+        <div className='offset-by-one columns ten'>
+          Provider: {item.name}
+        </div>
+        <div className='offset-by-one columns ten'>
+          Legal Number: {item.legalNumber}
+        </div>
+      </div>
+
     )
   })
 
@@ -20,17 +25,7 @@ const AllProviders = ({ providers }) => {
       <input className='login-input' type='text' id='search-bar' placeholder='SEARCH' />
 
       <div className="mytransfers-tablecontainer">
-        <table className='u-full-width'>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Legal Number</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items2}
-          </tbody>
-        </table>
+        {items2}
       </div>
     </div>
   )

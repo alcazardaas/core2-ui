@@ -50,8 +50,14 @@ class createPayment extends React.Component {
             {items2}
           </Field>
 
+          <label htmlFor='Currency'>Currency</label>
+          <Field className='u-full-width' type='text' name='Currency' component='input' />
+
           <label htmlFor='Amount'>Amount</label>
           <Field className='u-full-width' type='number' name='Amount' component='input' />
+
+          <label htmlFor='PaymentType'>Description</label>
+          <Field className='u-full-width' type='text' name='PaymentType' component='input' />
 
           <label htmlFor='DueDate'>Due Date</label>
           <Field className='u-full-width' type='text' name='DueDate' component='input' />

@@ -11,7 +11,7 @@ class CreateClient extends React.Component {
     return (
       <div className='container transfers-cont' >
         <div className='justify-content-center'>
-          <h3>Create Account</h3>
+          <h3>Create Client</h3>
         </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor='SocialNumber'>Client Social Number</label>

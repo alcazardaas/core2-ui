@@ -4,41 +4,39 @@ const AllPayments = ({ payments }) => {
 
   let items2 = payments.map(item => {
     return (
-      <tr key={item.id}>
-        <td>{item.clientId}</td>
-        <td>{item.providerId}</td>
-        <td>{item.amount}</td>
-        <td>{item.currency}</td>
-        <td>{item.dueDate}</td>
-        <td>{item.isPaid ? 'Paid' : 'Not Paid'}</td>
-      </tr>
+      <div key={item.id} className='row u-full-width div-list list-item'>
+        <div className='offset-by-one columns five'>
+          Client: {item.clientId}
+        </div>
+        <div className='offset-by-one columns five'>
+          Provider: {item.providerId}
+        </div>
+        <div className='offset-by-one columns five'>
+          Amount: {item.amount}
+        </div>
+        <div className='offset-by-one columns five'>
+          Currency: {item.currency}
+        </div>
+        <div className='offset-by-one columns five'>
+          Status: {item.isPaid ? 'Paid' : 'Not Paid'}
+        </div>
+        <div className='offset-by-one columns twelve'>
+          Due Date: {item.dueDate}
+        </div>
+      </div>
     )
   })
 
   return (
     <div className='container'>
       <div className='justify-content-center'>
-        <h3>Bank  Accounts</h3>
+        <h3>Payments</h3>
       </div>
 
       <input className='login-input' type='text' id='search-bar' placeholder='SEARCH' />
 
       <div className="mytransfers-tablecontainer">
-        <table className='u-full-width'>
-          <thead>
-            <tr>
-              <th>Client</th>
-              <th>Provider</th>
-              <th>Amount</th>
-              <th>Currency</th>
-              <th>DueDate</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items2}
-          </tbody>
-        </table>
+        {items2}
       </div>
     </div>
   )

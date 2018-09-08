@@ -32,9 +32,16 @@ let items = menu.menuItems.map(item => {
   )
 })
 
+const logout = () => {
+  sessionStorage.clear();
+}
+
 class Menu extends React.Component {
 
   render() {
+
+
+
     return (
       <div className='sidebar' id='sidebar'>
         <div className="toggle-btn" onClick={this.menuToggle.bind(this)}>
@@ -45,6 +52,9 @@ class Menu extends React.Component {
 
         <ul className='menu-list'>
           {items}
+          <li className='menu-list-item'>
+            <Link onClick={logout} to={'/'} > Log Out </Link>
+          </li>
         </ul>
       </div>
     )

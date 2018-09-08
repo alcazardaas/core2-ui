@@ -30,9 +30,9 @@ class Providers extends React.Component {
       !isLoading ? <div className="container">
         <div className="tabs" onChange={this.setGender.bind(this)}>
           <input type="radio" name="tab" id="tab1" defaultChecked />
-          <label className='transfer-main-label' htmlFor="tab1">Bank Accounts</label>
+          <label className='transfer-main-label' htmlFor="tab1">Providers</label>
           <input type="radio" name="tab" id="tab2" />
-          <label className='transfer-main-label' htmlFor="tab2">Create Bank Accounts</label>
+          <label className='transfer-main-label' htmlFor="tab2">Create Provider</label>
 
           <div className="tab-content-wrapper">
             <div id="tab-content-1" className="tab-content">
