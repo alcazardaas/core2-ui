@@ -22,7 +22,8 @@ var JSONMenuAdmin = {
   ]
 };
 
-var menu = isAdmin ? JSONMenuAdmin : JSONMenu;
+var menu = isAdmin === "true" ? JSONMenuAdmin : JSONMenu;
+
 
 let items = menu.menuItems.map(item => {
   return (

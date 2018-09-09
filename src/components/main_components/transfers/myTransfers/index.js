@@ -1,15 +1,23 @@
 import React from 'react'
 
-const MyTransfers = ({transfers}) => {
+const MyTransfers = ({ transfers }) => {
 
   let items2 = transfers.map(item => {
     return (
-      <tr key={item.id}>
-        <td>{item.discAccount}</td>
-        <td>{item.destBankAccount}</td>
-        <td>{item.amount}</td>
-        <td>{item.transactionDate}</td>
-      </tr>
+      <div key={item.id} className='row u-full-width div-list list-item'>
+        <div className='offset-by-one columns five'>
+          Account: {item.discAccount}
+        </div>
+        <div className='offset-by-one columns five'>
+          Destination Account: {item.destBankAccount}
+        </div>
+        <div className='offset-by-one columns five'>
+          Amount: {item.amount}
+        </div>
+        <div className='offset-by-one columns five'>
+          Tansaction Date: {item.transactionDate}
+        </div>
+      </div>
     )
   })
 
@@ -32,19 +40,7 @@ const MyTransfers = ({transfers}) => {
       <button className='btn-login' type='submit'>SEARCH</button>
 
       <div className="mytransfers-tablecontainer">
-        <table className='u-full-width'>
-          <thead>
-            <tr>
-              <th>Account</th>
-              <th>Destination Account</th>
-              <th>Amount</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items2}
-          </tbody>
-        </table>
+        {items2}
       </div>
     </div>
   )

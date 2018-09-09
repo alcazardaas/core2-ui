@@ -4,32 +4,33 @@ import { Link } from 'react-router-dom'
 const Account = ({ accounts }) => {
 
   let items2 = accounts.map(item => {
-    return (
-      <tr key={item.id}>
-        <td><Link to={'/'}>{item.accountNumber}</Link></td>
-        <td>{item.currency}</td>
-        <td>{item.balance}</td>
-        <td>{item.accountType}</td>
-      </tr>
-    )
+    if (item.accountStatus) {
+      return (
+        <div key={item.id} className='row u-full-width div-list list-item'>
+          <div className='offset-by-one columns ten'>
+            Account: {item.accountNumber}
+          </div>
+          <div className='offset-by-one columns ten'>
+            Client Account: {item.accountClientNumber}
+          </div>
+          <div className='offset-by-one columns five'>
+            Currency: {item.currency}
+          </div>
+          <div className='offset-by-one columns five'>
+            Balance: {item.balance}
+          </div>
+          <div className='offset-by-one columns five'>
+            Account type: {item.accountType}
+          </div>
+        </div>
+      )
+    } else return
   })
 
   return (
     <div>
       <input className='login-input' type='text' id='searchBar' placeholder='SEARCH' />
-      <table className='u-full-width'>
-        <thead>
-          <tr>
-            <th>Account</th>
-            <th>Currency</th>
-            <th>Balance</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          {items2}
-        </tbody>
-      </table>
+      {items2}
     </div>
   )
 }
