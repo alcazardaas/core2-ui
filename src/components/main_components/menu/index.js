@@ -8,7 +8,6 @@ var JSONMenu = {
     { 'text': 'Home', 'to': 'home', 'icon': 'none' },
     { 'text': 'Payments', 'to': 'payments', 'icon': 'none' },
     { 'text': 'Transfers', 'to': 'transfers', 'icon': 'none' },
-    { 'text': 'Contact', 'to': 'home', 'icon': 'none' },
   ]
 };
 
