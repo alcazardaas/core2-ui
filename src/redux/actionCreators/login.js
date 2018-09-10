@@ -5,7 +5,7 @@ import history from './../../helpers/history'
 const API_URL_USER = 'https://localhost:44353/api/useraccounts/login'
 
 export default function login(userAccount) {
-
+  console.log(userAccount)
   return async dispatch => {
     // Initiate loading state
     dispatch({
