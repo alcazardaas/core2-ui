@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
+import history from './../../../helpers/history'
 
 import AllClients from './../../../components/admin_components/clients/allClients'
 import CreateClient from './../../../components/admin_components/clients/createClient'
@@ -26,6 +27,7 @@ class Clients extends React.Component {
 
     values = { ...values, DateOfRegistration: d }
     this.props.createClient(values)
+    history.push('/home')
   }
 
   setGender(event) {

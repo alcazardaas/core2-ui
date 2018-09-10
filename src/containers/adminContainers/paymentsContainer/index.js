@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
+import history from './../../../helpers/history'
 
 import AllPayments from './../../../components/admin_components/payments/allPayments'
 import CreatePayment from './../../../components/admin_components/payments/createPayment'
@@ -17,9 +18,9 @@ class Payments extends React.Component {
   }
 
   submit = values => {
-    values = {...values, IsPaid: false}
-    console.log(values)
+    values = { ...values, IsPaid: false }
     this.props.createPayment(values)
+    history.push('/home')
   }
 
   setGender(event) {

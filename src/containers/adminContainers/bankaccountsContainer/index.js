@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
+import history from './../../../helpers/history'
 
 import AllBankAccounts from './../../../components/admin_components/bankAccounts/allBankaccounts'
 import CreateBankAccounts from './../../../components/admin_components/bankAccounts/createBankaccounts'
@@ -25,8 +26,8 @@ class BankAccounts extends React.Component {
     d = [year, month, day].join('-');
 
     values = { ...values, AccountNumber: '123', AccountClientNumber: '123', Balance: 0, AccountStatus: true, CreatedDate: d }
-    console.log(values)
     this.props.createBankAccount(values)
+    history.push('/home')
   }
 
   setGender(event) {

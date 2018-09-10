@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
+import history from './../../../helpers/history'
 
 import AllProviders from './../../../components/admin_components/providers/allProviders'
 import CreateProvider from './../../../components/admin_components/providers/createProvider'
@@ -17,6 +18,7 @@ class Providers extends React.Component {
 
   submit = values => {
     this.props.createProvider(values)
+    history.push('/home')
   }
 
   setGender(event) {
