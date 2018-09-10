@@ -13,7 +13,11 @@ export default function getAllPayments() {
 
     try {
       // Call the API
-      const response = await fetch(API_URL_USER)
+      const response = await fetch(API_URL_USER, {
+        headers: {
+          'Authorization': 'Bearer ' + sessionStorage.getItem('uToken')
+        }
+      })
       const result = await response.json()
       // Update payload in reducer on success
       dispatch({

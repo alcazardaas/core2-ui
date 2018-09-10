@@ -15,7 +15,8 @@ export default function createBankAccount(bankaccount) {
         method: 'POST',
         body: JSON.stringify(bankaccount),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + sessionStorage.getItem('uToken')
         }
       })
       dispatch({

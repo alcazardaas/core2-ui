@@ -15,7 +15,8 @@ export default function createProvider(provider) {
         method: 'POST',
         body: JSON.stringify(provider),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + sessionStorage.getItem('uToken')
         }
       })
       dispatch({

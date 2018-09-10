@@ -16,7 +16,8 @@ export default function getClientBySocialNumber(item) {
         method: 'POST',
         body: JSON.stringify(item),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + sessionStorage.getItem('uToken')
         }
       })
       const result = await response.json()

@@ -11,7 +11,11 @@ export default function getAllClients() {
 
     try {
       // Call the API
-      const response = await fetch(API_URL)
+      const response = await fetch(API_URL, {
+        headers: {
+          'Authorization': 'Bearer ' + sessionStorage.getItem('uToken')
+        }
+      })
       const result = await response.json()
       // Update payload in reducer on success
       dispatch({

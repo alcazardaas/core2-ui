@@ -21,7 +21,7 @@ class MyAccounts extends React.Component {
 
     var { accounts, exchangecurr } = this.props
     if (total.quant && exchangecurr) {
-      total = { totall: total.quant * exchangecurr }
+      total = { totall: (Math.round((total.quant * exchangecurr) * 100) / 100) }
       console.log('totall is ' + total.totall)
     }
 

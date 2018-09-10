@@ -15,7 +15,8 @@ export default function payPayment(accountpaymeny) {
         method: 'POST',
         body: JSON.stringify(accountpaymeny),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + sessionStorage.getItem('uToken')
         }
       })
       dispatch({

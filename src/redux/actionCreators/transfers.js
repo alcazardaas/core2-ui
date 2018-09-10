@@ -17,7 +17,8 @@ export default function createTransfer(transfer) {
         method: 'POST',
         body: JSON.stringify(transfer),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + sessionStorage.getItem('uToken')
         }
       })
       dispatch({
