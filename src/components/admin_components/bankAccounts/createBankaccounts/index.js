@@ -18,10 +18,19 @@ class CreateBankAccount extends React.Component {
           <Field className='u-full-width' type='text' name='ClientSocialNumber' component='input' />
 
           <label htmlFor='Currency'>Currency</label>
-          <Field className='u-full-width' type='text' name='Currency' component='input' />
+          <Field className='u-full-width' name='Currency' component='select'>
+            <option value=''>SELECT CURRENCY</option>
+            <option value='Colones'>Colones</option>
+            <option value='Dolars'>Dolars</option>
+          </Field>
 
           <label htmlFor='AccountType'>Account Type</label>
-          <Field className='u-full-width' type='text' name='AccountType' component='input' />
+          <Field className='u-full-width' name='AccountType' component='select'>
+            <option value=''>SELECT type</option>
+            <option value='Savings'>Savings</option>
+            <option value='Normal'>Normal</option>
+            <option value='Exclusive'>Exclusive</option>
+          </Field>
 
           <div>
             <button className='btn-login' type='submit' disabled={pristine || submitting}>Save</button>

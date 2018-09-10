@@ -51,7 +51,11 @@ class createPayment extends React.Component {
           </Field>
 
           <label htmlFor='Currency'>Currency</label>
-          <Field className='u-full-width' type='text' name='Currency' component='input' />
+          <Field className='u-full-width' name='Currency' component='select'>
+            <option value=''>SELECT CURRENCY</option>
+            <option value='Colones'>Colones</option>
+            <option value='Dolars'>Dolars</option>
+          </Field>
 
           <label htmlFor='Amount'>Amount</label>
           <Field className='u-full-width' type='number' name='Amount' component='input' />
@@ -60,7 +64,7 @@ class createPayment extends React.Component {
           <Field className='u-full-width' type='text' name='PaymentType' component='input' />
 
           <label htmlFor='DueDate'>Due Date</label>
-          <Field className='u-full-width' type='text' name='DueDate' component='input' />
+          <Field placeholder='YYYY-MM-DD' className='u-full-width' type='text' name='DueDate' component='input' />
 
           <div>
             <button className='btn-login' type='submit' disabled={pristine || submitting}>Save</button>

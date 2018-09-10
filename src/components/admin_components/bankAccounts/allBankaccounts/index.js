@@ -39,6 +39,8 @@ class AllBankAccounts extends React.Component {
           </div>
           <div className='offset-by-one columns five'>
             Account type: {item.accountType}
+          </div><div className='offset-by-one columns five'>
+            Currency: {item.currency}
           </div>
           <div className='offset-by-one columns five'>
             Status: {item.accountStatus ? "Active" : "Inactive"}
