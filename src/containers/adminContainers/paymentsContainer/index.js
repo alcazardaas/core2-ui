@@ -47,7 +47,7 @@ class Payments extends React.Component {
             </div>
           </div>
         </div>
-      </div> : <h1>Loading...</h1>
+      </div> : <h1 className="saving">LOADING<span>.</span><span>.</span><span>.</span></h1>
     )
   }
 }

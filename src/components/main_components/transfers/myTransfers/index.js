@@ -38,18 +38,6 @@ const MyTransfers = ({ transfers }) => {
         <h3> My Transfers</h3>
       </div>
 
-      <div className="row">
-        <div className="six columns">
-          <label htmlFor="fromDate">From</label>
-          <input className='input-date' type="date" name="fromDate" id="fromDate" />
-        </div>
-        <div className="six columns">
-          <label htmlFor="toDate">To</label>
-          <input className='input-date' type="date" name="toDate" id="toDate" />
-        </div>
-      </div>
-      <button className='btn-login' type='submit'>SEARCH</button>
-
       <div className="mytransfers-tablecontainer">
         {items2}
       </div>

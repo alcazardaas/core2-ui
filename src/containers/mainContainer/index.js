@@ -34,7 +34,7 @@ class MainComponent extends React.Component {
           <TopCont username={client.firstName} />
           <MyAccounts accounts={accounts} />
         </div>
-        : <div><h1>LOADING...</h1></div>
+        : <h1 className="saving">LOADING<span>.</span><span>.</span><span>.</span></h1>
     )
   }
 }

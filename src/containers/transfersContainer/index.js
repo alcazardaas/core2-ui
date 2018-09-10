@@ -62,7 +62,7 @@ class TransferContainer extends React.Component {
               </div>
             </div>
           </div>
-        </div> : <div><h1>LOADING...</h1></div>
+        </div> : <h1 className="saving">LOADING<span>.</span><span>.</span><span>.</span></h1>
     )
   }
 }
