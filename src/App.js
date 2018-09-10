@@ -13,6 +13,7 @@ import './assets/css/main.css'
 /* PAGES */
 import Login from './pages/login/'
 import Home from './pages/home/'
+import FourOFour from './pages/fourofour/'
 
 class App extends React.Component {
   render() {
@@ -42,6 +43,7 @@ class App extends React.Component {
           <Route exact path='/adminpayments'
             render={() => <Home container="adminpayments" />}
           />
+          <Route exact path='/*' component={FourOFour} />
         </Switch>
       </main>
     );
