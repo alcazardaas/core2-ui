@@ -17,7 +17,8 @@ export default function getUserAccounts(userAccount) {
         method: 'POST',
         body: JSON.stringify(userAccount),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + sessionStorage.getItem('uToken')
         }
       })
       const result = await response.json()

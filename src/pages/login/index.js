@@ -8,13 +8,8 @@ import login from './../../redux/actionCreators/login'
 
 class Login extends React.Component {
   submit = values => {
-    var { logged } = this.props
-
     this.props.login(values)
-    if (logged) {
-      history.push('/home')
-    }
-  };
+  }
 
   render() {
     return (

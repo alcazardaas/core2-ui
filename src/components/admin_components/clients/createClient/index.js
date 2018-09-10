@@ -24,7 +24,7 @@ class CreateClient extends React.Component {
           <Field className='u-full-width' type='text' name='LastName' component='input' />
 
           <label htmlFor='DateOfBirth'>Birth Date</label>
-          <Field className='u-full-width' type='text' name='DateOfBirth' component='input' />
+          <Field className='u-full-width' type='text' name='DateOfBirth' component='input' placeholder='YYYY-MM-DD' />
 
           <label htmlFor='PhoneNumber'>Phone Number</label>
           <Field className='u-full-width' type='number' name='PhoneNumber' component='input' />

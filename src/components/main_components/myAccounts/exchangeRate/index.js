@@ -3,12 +3,8 @@ import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
 //http://free.currencyconverterapi.com API for exchange
-let total = 0;
 
 const ExchangeRate = ({ exchanged, handleSubmit, pristine, submitting }) => {
-
-  if (exchanged.total)
-    this.forceUpdate()
 
   return (
     <div className='main-exchange'>
@@ -29,7 +25,7 @@ const ExchangeRate = ({ exchanged, handleSubmit, pristine, submitting }) => {
           <button className='u-full-width' type='submit' disabled={pristine || submitting}>Convert</button>
         </div>
       </form>
-      <p>Total: {exchanged.total}</p>
+      <p>Total: {exchanged.totall}</p>
     </div>
   )
 }

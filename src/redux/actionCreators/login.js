@@ -1,10 +1,12 @@
 import * as a from '../actions/types'
+import history from './../../helpers/history'
+
 
 const API_URL_USER = 'https://localhost:44353/api/useraccounts/login'
 
 export default function login(userAccount) {
   console.log(userAccount)
-  
+
   return async dispatch => {
     // Initiate loading state
     dispatch({
@@ -13,23 +15,33 @@ export default function login(userAccount) {
 
     try {
       // Call the API
-      const response = await fetch(API_URL_USER, {
+      const response = fetch(API_URL_USER, {
         method: 'POST',
         body: JSON.stringify(userAccount),
         headers: {
           'Content-Type': 'application/json'
         }
       })
-      const result = await response.json()
-      sessionStorage.setItem('uClient', userAccount.socialNumber)
-      sessionStorage.setItem('uToken', result.token);
-      sessionStorage.setItem('uRole', result.isAdmin);
+        .then(response => response.json().then(payload => ({ payload, response })))
+        .then(({ response, payload }) => {
+          if (response.status == "200") {
+
+            sessionStorage.setItem('uClient', userAccount.socialNumber)
+            sessionStorage.setItem('uToken', payload.token);
+            sessionStorage.setItem('uRole', payload.isAdmin);
+
+            dispatch({
+              type: a.LOGIN_SUCCESS,
+              payload: payload
+            })
+
+            history.push('/home')
+
+          }
+        })
 
       // Update payload in reducer on success
-      dispatch({
-        type: a.LOGIN_SUCCESS,
-        payload: result
-      })
+
     } catch (err) {
       // Update error in reducer on failure
       dispatch({
