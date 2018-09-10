@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
-
+import history from './../../helpers/history'
 
 import Transfers from '../../components/main_components/transfers/transfer/'
 import MyTransfers from '../../components/main_components/transfers/myTransfers/'
@@ -37,6 +37,7 @@ class TransferContainer extends React.Component {
 
     values = { ...values, TransactionDate: d }
     this.props.createTransfer(values)
+    history.push('/home')
   }
 
   render() {

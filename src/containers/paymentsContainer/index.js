@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
+import history from './../../helpers/history'
 
 import Payments from '../../components/main_components/payments/payments/'
 import MyPayments from '../../components/main_components/payments/myPayments/'
@@ -25,6 +26,7 @@ class PaymentContainer extends React.Component {
   submit = values => {
     values ={...values, clientId: sessionStorage.getItem('uClient')}
     this.props.payPayment(values)
+    history.push('/home')
   }
 
   render() {
