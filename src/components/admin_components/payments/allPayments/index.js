@@ -3,6 +3,17 @@ import React from 'react'
 const AllPayments = ({ payments }) => {
 
   let items2 = payments.map(item => {
+
+    var due = new Date(item.dueDate),
+      month = '' + (due.getMonth() + 1),
+      day = '' + due.getDate(),
+      year = due.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    due = [year, month, day].join('-')
+
     return (
       <div key={item.id} className='row u-full-width div-list list-item'>
         <div className='offset-by-one columns five'>
@@ -21,7 +32,7 @@ const AllPayments = ({ payments }) => {
           Status: {item.isPaid ? 'Paid' : 'Not Paid'}
         </div>
         <div className='offset-by-one columns twelve'>
-          Due Date: {item.dueDate}
+          Due Date: {due}
         </div>
       </div>
     )

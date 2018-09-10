@@ -6,6 +6,7 @@ import LogComp from './../../components/login_components/login/'
 import login from './../../redux/actionCreators/login'
 
 class Login extends React.Component {
+  
   submit = values => {
     this.props.login(values)
   }

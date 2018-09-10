@@ -54,7 +54,7 @@ class createPayment extends React.Component {
           <Field className='u-full-width' name='Currency' component='select'>
             <option value=''>SELECT CURRENCY</option>
             <option value='Colones'>Colones</option>
-            <option value='Dolars'>Dolars</option>
+            <option value='Dollars'>Dollars</option>
           </Field>
 
           <label htmlFor='Amount'>Amount</label>
