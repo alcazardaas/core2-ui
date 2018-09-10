@@ -8,8 +8,6 @@ export default function createTransfer(transfer) {
     dispatch({
       type: a.TRANSFERS_REQUEST
     })
-    //console.log('asdfawfasdf')
-    //console.log(transfer)
 
     try {
       // Call the API

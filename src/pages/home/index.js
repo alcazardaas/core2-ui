@@ -12,7 +12,6 @@ import AdminPayments from './../../containers/adminContainers/paymentsContainer'
 
 
 const Home = (props) => {
-  console.log(props.container)
 
   var containers = { 
     home: <MainContainer/> ,
