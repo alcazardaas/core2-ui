@@ -11,13 +11,9 @@ import createUserAccount from './../../../redux/actionCreators/createuseraccount
 class Login_Component extends React.Component {
 
   submit = values => {
-    var { saved } = this.props
     if (values.password === values.vPassword) {
       var user = { socialNumber: values.socialNumber, password: values.password }
       this.props.createUserAccount(user)
-      if (saved) {
-        alert('user created')
-      }
     } else {
       alert('Passwords have to match')
     }

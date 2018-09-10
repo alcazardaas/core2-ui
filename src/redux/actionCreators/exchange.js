@@ -12,7 +12,7 @@ export default function exchange(item) {
 
     try {
       // Call the API
-      if (item.currency === "CRC")
+      if (item.currency == "CRC")
         API_URL_USER = "http://free.currencyconverterapi.com/api/v5/convert?q=crc_usd&compact=ultra"
 
       const response = await fetch(API_URL_USER)
