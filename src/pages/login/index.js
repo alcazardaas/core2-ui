@@ -19,6 +19,7 @@ class Login extends React.Component {
             <LogComp onSubmit={this.submit} />
           </div>
         </div>
+        <a className='credit-the-author' href='https://www.freepik.com/free-photo/businesswoman-leader-in-modern-office-with-businesspeople-workin_1174186.htm'>Designed by Javi_indy</a>
       </div>
     )
   }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-let isAdmin = sessionStorage.getItem('uRole')
 
 var JSONMenu = {
   'menuItems': [
@@ -21,17 +20,6 @@ var JSONMenuAdmin = {
   ]
 };
 
-var menu = isAdmin === "true" ? JSONMenuAdmin : JSONMenu;
-
-
-let items = menu.menuItems.map(item => {
-  return (
-    <li key={item.text} className='menu-list-item'>
-      <Link to={`/` + item.to} > {item.text} </Link>
-    </li>
-  )
-})
-
 const logout = () => {
   sessionStorage.clear();
 }
@@ -40,7 +28,18 @@ class Menu extends React.Component {
 
   render() {
 
+    let isAdmin = sessionStorage.getItem('uRole')
 
+    var menu = isAdmin === "true" ? JSONMenuAdmin : JSONMenu;
+
+
+    let items = menu.menuItems.map(item => {
+      return (
+        <li key={item.text} className='menu-list-item'>
+          <Link to={`/` + item.to} > {item.text} </Link>
+        </li>
+      )
+    })
 
     return (
       <div className='sidebar' id='sidebar'>
