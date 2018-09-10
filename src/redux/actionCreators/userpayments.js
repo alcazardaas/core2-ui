@@ -3,7 +3,6 @@ import * as a from '../actions/types'
 const API_URL_USER = 'https://localhost:44353/api/payments/getuserpayments'
 
 export default function getUserAccounts(userAccount) {
-  console.log(userAccount)
 
   return async dispatch => {
     // Initiate loading state

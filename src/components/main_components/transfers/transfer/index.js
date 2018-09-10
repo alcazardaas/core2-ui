@@ -19,7 +19,7 @@ class Transfers extends React.Component {
 
   render() {
 
-    const { payments, accounts, handleSubmit, pristine, reset, submitting } = this.props
+    const { accounts, handleSubmit, pristine, reset, submitting } = this.props
 
     let items2 = accounts.map(item => {
       return (

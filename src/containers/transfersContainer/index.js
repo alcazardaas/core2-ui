@@ -36,7 +36,6 @@ class TransferContainer extends React.Component {
     d = [year, month, day].join('-');
 
     values = { ...values, TransactionDate: d }
-    console.log(values)
     this.props.createTransfer(values)
   }
 

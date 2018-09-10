@@ -9,10 +9,9 @@ import Clients from './../../containers/adminContainers/clientsContainer'
 import BankAccounts from './../../containers/adminContainers/bankaccountsContainer'
 import Providers from './../../containers/adminContainers/providersContainer'
 import AdminPayments from './../../containers/adminContainers/paymentsContainer'
-
+import FuorOFour from './../fourofour'
 
 const Home = (props) => {
-  console.log(props.container)
 
   var containers = { 
     home: <MainContainer/> ,
@@ -28,7 +27,7 @@ const Home = (props) => {
     <div>
       <Menu />
       {
-        containers[props.container] || <MainContainer/>
+        containers[props.container] || <FuorOFour/>
       }
     </div>
   )

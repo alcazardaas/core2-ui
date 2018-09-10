@@ -5,7 +5,6 @@ import history from './../../helpers/history'
 const API_URL_USER = 'https://localhost:44353/api/useraccounts/login'
 
 export default function login(userAccount) {
-  console.log(userAccount)
 
   return async dispatch => {
     // Initiate loading state
@@ -15,7 +14,7 @@ export default function login(userAccount) {
 
     try {
       // Call the API
-      const response = fetch(API_URL_USER, {
+      fetch(API_URL_USER, {
         method: 'POST',
         body: JSON.stringify(userAccount),
         headers: {
@@ -24,7 +23,7 @@ export default function login(userAccount) {
       })
         .then(response => response.json().then(payload => ({ payload, response })))
         .then(({ response, payload }) => {
-          if (response.status == "200") {
+          if (response.status === "200") {
 
             sessionStorage.setItem('uClient', userAccount.socialNumber)
             sessionStorage.setItem('uToken', payload.token);

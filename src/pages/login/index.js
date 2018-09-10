@@ -2,7 +2,6 @@ import React from 'react'
 import { reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
-import history from './../../helpers/history'
 import LogComp from './../../components/login_components/login/'
 import login from './../../redux/actionCreators/login'
 
